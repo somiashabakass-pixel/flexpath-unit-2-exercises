@@ -22,15 +22,15 @@ public class Main {
             new Parrot("Loki"),
             */
             // TODO: Uncomment these two lines after implementing the Lion class
-            /*
+
             new Lion("Simba"),
             new Lion("Nala"),
-            */
+
             // TODO: Uncomment these two lines after implementing the Elephant class
-            /*
+
             new Elephant("Dumbo"),
             new Elephant("Jumbo")
-             */
+
     );
 
     /**

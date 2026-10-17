@@ -56,8 +56,8 @@ The `Elephant` class will represent an elephant.  To create this class, you'll n
 4. Implement the abstract `speak` method to return a String made up of `name + " lets out a loud ROAR!"`
 5. Override the `sleep` method to return the result of calling the `super.sleep` method and appending
     `" " + name + " dreams of a delicious steak."` to the end of the result.
-6. Uncomment the `lion` section in the `Main` class to add an lion to the zoo.
-7. Uncomment the `lion` section in the `ExerciseTests` class to add tests for the `Lion` class.
+6. Uncomment the `Lion` section in the `Main` class to add an lion to the zoo.
+7. Uncomment the `Lion` section in the `ExerciseTests` class to add tests for the `Lion` class.
 8. Run the application and go through all of the options to see that the two defined lions are
     properly behaving as you indicated.
 9. Run the tests to verify that the `Lion` class is implemented correctly.
