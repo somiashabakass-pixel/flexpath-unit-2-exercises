@@ -13,9 +13,16 @@ public class Main {
      * @param b The denominator
      * @return The result of the division
      */
-    public static double safeDivision(double a, double b) {
-        // todo: Handle the unchecked ArithmeticException by returning 0.
+
+
+    public static double safeDivision(double a, double b){ try {
+        if (b == 0) {
+            return 0;
+        }
         return a / b;
+    }catch (ArithmeticException e) {
+        return 0;
+    }
     }
 
     /**
@@ -26,12 +33,19 @@ public class Main {
      * @return The second letter of the string
      */
     public static String getSecondLetter(String s, List<String> logMessages) {
-        // TODO: Handle the StringINdexOutOfBoundsException by returning an empty string ("")
-        return s.substring(1, 2);
+        String result = "";
 
-        // TODO: This line needs to happen after the try/catch block, regardless of whether an exception is thrown (use a finally block)
-        // logMessages.add("Exiting method");
-    }
+        try {
+            result = s.substring(1, 2);
+        } catch (StringIndexOutOfBoundsException e) {
+            result = "";
+        } finally {
+            logMessages.add("Exiting method");
+        }
+        return result;}
+
+
+
 
     /**
      * Read a fake file and return its contents.
@@ -41,8 +55,10 @@ public class Main {
      */
     public static String readFile(List<String> logMessages) {
         // TODO: Initialize the FakeFileReader in a try-with-resources block to make sure it closes and updates the logMessages list
-        FakeFileReader reader = new FakeFileReader(logMessages);
-        return reader.read();
+        try (FakeFileReader reader = new FakeFileReader(logMessages)) {
+            return reader.read();
+        }
+
     }
 
     /**
@@ -53,8 +69,13 @@ public class Main {
      * @return The result of the division
      */
     public static double safeDivideWithCustomException(double a, double b) throws CustomDivideByZeroException {
+        if (b == 0) {
+            throw new CustomDivideByZeroException(a, b);
+        }
+        return a / b;
+        }
         // TODO: handle divide by zero by throwing a CustomDivideByZeroException
         // TODO: Modify the custom exception to pass a,b to the constructor and store them in the exception (see CustomDivideByZeroException.java)
-        return a / b;
-    }
+
+
 }

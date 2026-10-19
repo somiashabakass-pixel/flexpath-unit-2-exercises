@@ -14,6 +14,9 @@ public class CustomDivideByZeroException extends  Exception {
      */
     private double b;
 
+    public CustomDivideByZeroException(double a, double b) {
+    }
+
     /**
      * Get the numerator of the failed division operation.
      *
